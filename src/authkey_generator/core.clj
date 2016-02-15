@@ -10,9 +10,10 @@
   [{:keys [private public]}]
   (html [:dl
          [:dt "Private Key"]
-         [:dd private]
+         [:dd (format "/authkey \"player\" \"%s\" \"SL\"; saveauthkeys"
+                      private)]
          [:dt "Public Key"]
-         [:dd public]]))
+         [:dd (str "player " public)]]))
 
 (defn generate-key
   "Takes any number of args, returns map of
